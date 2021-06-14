@@ -1,0 +1,13 @@
+
+
+----------- ERROR PAGO SIN ADEUDO -------------------
+*.- N° Venta: 89622
+*.- Adeudo: $0.00
+*.- Monto Pagado: $132.00
+----------- ERROR PAGO SIN ADEUDO -------------------
+
+----------- ERROR PAGO SIN ADEUDO -------------------
+*.- N° Venta: 89648
+*.- Adeudo: $0.00
+*.- Monto Pagado: $113.00
+----------- ERROR PAGO SIN ADEUDO -------------------
