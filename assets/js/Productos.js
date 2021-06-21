@@ -222,6 +222,7 @@ $(document).ready(function() {
 	$("#btn_Editar_Producto").click(function(event) {
 
 		let Status 			= "";
+		let idNetsuite 		= $("#txtidNetsuiteEditar").val();
 		let Codigo 			= $("#txt_Codigo_Editar").val();
 		let Proveedor 		= $("#select_Proveedor_Editar").val();
 		let Producto 		= $("#txt_Producto_Editar").val();
@@ -245,51 +246,39 @@ $(document).ready(function() {
 		let CodigoCaja 		= $("#txt_Codigo_Caja_Editar").val();
 		let CantidadCaja 	= $("#txt_Cantidad_Caja_Editar").val();
 
-		if( $('#checkStatus_Editar').prop('checked'))
-		{
+		if( $('#checkStatus_Editar').prop('checked')){
 	    	Status = "Inactivo";
 		}
-		else
-		{
+		else{
 			Status = "Activo";
 		}
 
-		if( $('#checkDistribuidor_Editar').prop('checked'))
-		{
+		if( $('#checkDistribuidor_Editar').prop('checked')){
 	    	Distribuidor = 1;
 		}
-		else
-		{
+		else{
 			Distribuidor = 0;
 		}
 
-		if( $('#checkSalon_Editar').prop('checked'))
-		{
+		if( $('#checkSalon_Editar').prop('checked')){
 	    	Salon = 1;
 		}
-		else
-		{
+		else{
 			Salon = 0;
 		}
 
-		if( $('#checkPublico_Editar').prop('checked'))
-		{
+		if( $('#checkPublico_Editar').prop('checked')){
 	    	Publico = 1;
 		}
-		else
-		{
+		else{
 			Publico = 0;
 		}
 
-		if (CodigoCaja != null && CodigoCaja != "" && CantidadCaja != null && CantidadCaja != "" &&  CantidadCaja > 0 && Codigo != null && Codigo != "" && Producto != null && Producto != "" && Marca != null && Marca != "" && Division != null && Division != "" && Linea != null && Linea != "" && Sublinea != null && Sublinea != "" && Ml != null && Ml != "" && ClaveSAT != null && ClaveSAT != "" && UnidadSAT != null && UnidadSAT != "" && Min_Produccion != null && Min_Produccion != "" && Min_Inventario != null && Min_Inventario != "" )
-		{
-
-			if (ClaveSAT.length == 8)
-			{
-				if (UnidadSAT.length == 3)
-				{
-
+		if (CodigoCaja != null && CodigoCaja != "" && CantidadCaja != null && CantidadCaja != "" &&  CantidadCaja > 0 && Codigo != null && Codigo != "" && Producto != null && Producto != "" && Marca != null && Marca != "" && Division != null && Division != "" && Linea != null && Linea != "" && Sublinea != null && Sublinea != "" && Ml != null && Ml != "" && ClaveSAT != null && ClaveSAT != "" && UnidadSAT != null && UnidadSAT != "" && Min_Produccion != null && Min_Produccion != "" && Min_Inventario != null && Min_Inventario != "" ){
+			if (ClaveSAT.length == 8){
+				if (UnidadSAT.length == 3){
 					var formData = new FormData();
+					formData.append("idNetsuite", idNetsuite);
 					formData.append("Codigo", Codigo);
 			    	formData.append("idProveedor", Proveedor);
 			    	formData.append("Producto", Producto);
@@ -550,6 +539,7 @@ $(document).ready(function() {
 	$("#btn_Nuevo_Producto").click(function(event) {
 		
 		let Status 			= "";
+		let idNetsuite 		= $("#txtidNetsuite").val();
 		let Codigo 			= $("#txt_Codigo").val();
 		let Proveedor 		= $("#select_Proveedor").val();
 		let Producto 		= $("#txt_Producto").val();
@@ -573,51 +563,40 @@ $(document).ready(function() {
 		let Publico 		= 0;
 		let Imagen 			= $("#txt_Imagen").val();
 
-		if( $('#checkStatus').prop('checked'))
-		{
+		if( $('#checkStatus').prop('checked')){
 	    	Status = "Inactivo";
 		}
-		else
-		{
+		else{
 			Status = "Activo";
 		}
 
-		if( $('#checkDistribuidor').prop('checked'))
-		{
+		if( $('#checkDistribuidor').prop('checked')){
 	    	Distribuidor = 1;
 		}
-		else
-		{
+		else{
 			Distribuidor = 0;
 		}
 
-		if( $('#checkSalon').prop('checked'))
-		{
+		if( $('#checkSalon').prop('checked')){
 	    	Salon = 1;
 		}
-		else
-		{
+		else{
 			Salon = 0;
 		}
 
-		if( $('#checkPublico').prop('checked'))
-		{
+		if( $('#checkPublico').prop('checked')){
 	    	Publico = 1;
 		}
-		else
-		{
+		else{
 			Publico = 0;
 		}
 
-		if (CodigoCaja != null && CodigoCaja != "" && CantidadCaja != null && CantidadCaja != "" && CantidadCaja > 0 && Codigo != null && Codigo != "" && Producto != null && Producto != "" && Marca != null && Marca != "" && Division != null && Division != "" && Linea != null && Linea != "" && Sublinea != null && Sublinea != "" && Ml != null && Ml != "" && ClaveSAT != null && ClaveSAT != "" && UnidadSAT != null && UnidadSAT != "" && Min_Produccion != null && Min_Produccion != "" && Min_Inventario != null && Min_Inventario != "" )
-		{
-
-			if (ClaveSAT.length == 8)
-			{
-				if (UnidadSAT.length == 3)
-				{
+		if (CodigoCaja != null && CodigoCaja != "" && CantidadCaja != null && CantidadCaja != "" && CantidadCaja > 0 && Codigo != null && Codigo != "" && Producto != null && Producto != "" && Marca != null && Marca != "" && Division != null && Division != "" && Linea != null && Linea != "" && Sublinea != null && Sublinea != "" && Ml != null && Ml != "" && ClaveSAT != null && ClaveSAT != "" && UnidadSAT != null && UnidadSAT != "" && Min_Produccion != null && Min_Produccion != "" && Min_Inventario != null && Min_Inventario != "" ){
+			if (ClaveSAT.length == 8){
+				if (UnidadSAT.length == 3){
 
 					var formData = new FormData();
+					formData.append("idNetsuite", idNetsuite);
 					formData.append("Codigo", Codigo);
 			    	formData.append("idProveedor", Proveedor);
 			    	formData.append("Producto", Producto);
@@ -2590,6 +2569,7 @@ function Editar_Producto()
 			        $("#select_Sublinea_Editar").append("<option value='" + parsed['Sublinea'][i]['ID'] + "'>" + parsed['Sublinea'][i]['Sublinea'] +"</option>");
 			    }
 
+				$("#txtidNetsuiteEditar").val(parsed['Catalogo'][0]['idNetsuite']);
 			    $("#txt_Codigo_Editar").val(parsed['Catalogo'][0]['Codigo']);
 				$("#select_Proveedor_Editar").val(parsed['Catalogo'][0]['idProveedor']);
 				$("#txt_Producto_Editar").val(parsed['Catalogo'][0]['Producto']);
@@ -4057,7 +4037,7 @@ function Eliminar_Sublinea()
 
 function Limpar() {
 	
-
+		$("#txtidNetsuite").val('');
 		$("#txt_Codigo").val('');
 		$("#select_Proveedor").val('');
 		$("#txt_Producto").val('');
@@ -4082,7 +4062,7 @@ function Limpar() {
 		$('#checkPublico').removeAttr('checked');
 
 
-
+		$("#txtidNetsuiteEditar").val('');
 		$("#txt_Codigo_Editar").val('');
 		$("#select_Proveedor_Editar").val('');
 		$("#txt_Producto_Editar").val('');

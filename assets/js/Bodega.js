@@ -49,6 +49,7 @@ console.log("Ready");
 	$("#btn_Guardar_Bodega").click(function(event) {
 		/* Act on the event */
 
+		let idNetsuite 			= $("#txtIdNetsuite").val();
 		let Nombre 				= $("#txtNombre").val();
 		let Encargado 			= $("#txt_Encargado").val();
 		let Calle 				= $("#txtCalle").val();
@@ -80,6 +81,7 @@ console.log("Ready");
 		if (Nombre != null && Nombre != "" && Calle != null && Calle != "" && Colonia != null && Colonia != "" && Municipio != null && Municipio != "" && Estado != null && Estado != "" && Pais != null && Pais != "" && CP != null && CP != "" && Tel1 != null && Tel1 != "" && Email != null && Email != "" && Tipo != null && Tipo != "" && Moneda != null && Moneda != "" && Password != null && Password != "" && Compra_minima != null && Compra_minima != "" && Porcentaje != null && Porcentaje != "" && Dias_Vigencia != null && Dias_Vigencia != "")
 		{
 			var formData = new FormData();
+			formData.append("idNetsuite", idNetsuite);
             formData.append("Sucursal", Nombre);
             formData.append("Encargado", Encargado);
             formData.append("Calle_numero", Calle);
@@ -126,8 +128,7 @@ console.log("Ready");
 	                {
 	                    console.log(data);
 
-	                    if(data == "Correcto")
-	                    {
+	                    if(parseInt(data) === 1){
 
 	                        toastr.options = {
 	                          "closeButton": true,
@@ -151,8 +152,7 @@ console.log("Ready");
 
 	                        Limpiar();
 	                    }
-	                    else
-	                    {
+	                    else{
 	                        toastr.options = {
 	                          "closeButton": true,
 	                          "debug": false,
@@ -275,6 +275,7 @@ console.log("Ready");
 	$("#btn_Editar_Bodega").click(function(event) {
 		/* Act on the event */
 
+		let idNetsuite 				= $("#txtIdNetsuiteEditar").val();
 		let Nombre 				= $("#txtNombre_Editar").val();
 		let Encargado 			= $("#txt_Encargado_Editar").val();
 		let Calle 				= $("#txtCalle_Editar").val();
@@ -317,6 +318,7 @@ console.log("Ready");
 		{
 			var formData = new FormData();
 			formData.append("ID", window.Global_Tabla_Bodega.childNodes[0].innerHTML);
+			formData.append("idNetsuite", idNetsuite);
             formData.append("Sucursal", Nombre);
             formData.append("Encargado", Encargado);
             formData.append("Calle_numero", Calle);
@@ -362,8 +364,7 @@ console.log("Ready");
 	                {
 	                    console.log(data);
 
-	                    if(data == "Correcto")
-	                    {
+	                    if(parseInt(data) === 1){
 
 	                        toastr.options = {
 	                          "closeButton": true,
@@ -387,8 +388,7 @@ console.log("Ready");
 
 	                        Limpiar();
 	                    }
-	                    else
-	                    {
+	                    else{
 	                        toastr.options = {
 	                          "closeButton": true,
 	                          "debug": false,
@@ -1296,7 +1296,8 @@ function fetch_data_producto(idSucursal) {
 
 
 function Limpiar() {
-	
+
+	$("#txtIdNetsuite").val("");
 	$("#txtNombre").val("");
     $("#txt_Encargado").val("");
     $("#txtCalle").val("");
@@ -1319,7 +1320,8 @@ function Limpiar() {
     $("#txtMonto_Clientes_Menudeo").val("0");
 
     $("#myModal_Guardar").modal("hide");
-
+	
+	$("#txtIdNetsuiteEditar").val("");
     $("#txtNombre_Editar").val("");
     $("#txt_Encargado_Editar").val("");
     $("#txtCalle_Editar").val("");
@@ -1447,6 +1449,7 @@ function fetch_data() {
                     {
                         for (var i = 0; i < parsed['Bodega'].length; i++) 
                         {
+							$("#txtIdNetsuiteEditar").val(parsed['Bodega'][i]['idNetsuite']);
                             $("#txtNombre_Editar").val(parsed['Bodega'][i]['Sucursal']);
                             $("#txt_Encargado_Editar").val(parsed['Bodega'][i]['Encargado']);
                             $("#txtCalle_Editar").val(parsed['Bodega'][i]['Calle_numero']);

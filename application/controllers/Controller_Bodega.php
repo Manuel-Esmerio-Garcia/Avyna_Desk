@@ -187,40 +187,16 @@ class Controller_Bodega extends CI_Controller {
 	    }
 	}
 
-	public function Editar_Bodega()
-	{
+	public function Editar_Bodega(){
 		$data = $this->input->post();
-
-		$Result          = $this->bodega->Editar_Bodega($data);
-
-		if ($Result > 0)
-	    {
-	      print_r("Correcto");
-	      exit();
-	    }
-	    else
-	    {
-	      print_r("Incorrecto");
-	      exit();
-	    }
+		$result = $this->bodega->Editar_Bodega($data);
+		print_r($result);
 	}
 
-	public function Guardar_Bodega()
-	{
+	public function Guardar_Bodega(){
 		$data = $this->input->post();
-
-		$Result          = $this->bodega->Guardar_Bodega($data);
-
-		if ($Result > 0)
-	    {
-	      print_r("Correcto");
-	      exit();
-	    }
-	    else
-	    {
-	      print_r("Incorrecto");
-	      exit();
-	    }
+		$result = $this->bodega->Guardar_Bodega($data);
+		print_r($result);
 	}
 
 }

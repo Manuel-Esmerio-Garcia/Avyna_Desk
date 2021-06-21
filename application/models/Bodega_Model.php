@@ -256,46 +256,36 @@ class Bodega_Model extends CI_Model
         }
     }
 
-    public function Editar_Bodega($data)
-    {
+    public function Editar_Bodega($data){
     	$ID = $data['ID'];
     	unset($data['ID']);
 
-    	$this->db->trans_begin();
-
-        
+    	$this->db->trans_begin();        
         $this->db->where('ID',$ID);
         $this->db->update('Sucursales', $data);
 
-        if ($this->db->trans_status() === FALSE)
-        {
-                $this->db->trans_rollback();
-                return 0;
+        if ($this->db->trans_status() === FALSE){
+            $this->db->trans_rollback();
+            return 0;
         }
-        else
-        {
-                $this->db->trans_commit();
-                return 1;
+        else{
+            $this->db->trans_commit();
+            return 1;
         }
     }
 
-    public function Guardar_Bodega($data)
-    {
+    public function Guardar_Bodega($data){
     	$this->db->trans_begin();
-
-        
         $this->db->insert('Sucursales', $data);
         $insert_id = $this->db->insert_id();
 
-        if ($this->db->trans_status() === FALSE)
-        {
-                $this->db->trans_rollback();
-                return 0;
+        if ($this->db->trans_status() === FALSE){
+            $this->db->trans_rollback();
+            return 0;
         }
-        else
-        {
-                $this->db->trans_commit();
-                return 1;
+        else{
+            $this->db->trans_commit();
+            return 1;
         }
     }
 

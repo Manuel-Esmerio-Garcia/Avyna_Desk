@@ -8,7 +8,7 @@
 			$servername 	= "prosalon4810.cloudapp.net";
 			$username 		= "prosalon";
 			$password 		= "prosalonAdmin1";
-			$databaseName 	= "prosalon";
+			$databaseName 	= "prosalon_dev";
 
 			/*$servername 		= "integratto.net";
 			$username 			= "integrat";
@@ -37,7 +37,7 @@
 
 		public function link(){
 			//return mysqli_connect('integratto.net', 'integrat', 'fritrubi', 'integrat_prosalon');
-			return mysqli_connect('prosalon4810.cloudapp.net', 'prosalon', 'prosalonAdmin1', 'prosalon');
+			return mysqli_connect('prosalon4810.cloudapp.net', 'prosalon', 'prosalonAdmin1', 'prosalon_dev');
 		}
 	}
 ?>

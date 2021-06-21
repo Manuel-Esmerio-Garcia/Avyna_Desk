@@ -295,8 +295,15 @@
         <div class="container-fluid">
 
 
-          <div class="checkbox" style="float: right;">
-            <label><input type="checkbox" id="checkStatus">Inactivo</label>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="checkbox" style="float: right;">
+              <label><input type="checkbox" id="checkStatus">Inactivo</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="txtidNetsuite">idNetsuite:*</label>
+            <input type="text" id="txtidNetsuite" class="form-control">
           </div>
 
           <div class="form-group">
@@ -479,8 +486,15 @@
 
         <div class="container-fluid">
 
-          <div class="checkbox" style="float: right;">
-            <label><input type="checkbox" id="checkStatus_Editar">Inactivo</label>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="checkbox" style="float: right;">
+              <label><input type="checkbox" id="checkStatus_Editar">Inactivo</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="txtidNetsuiteEditar">idNetsuite:*</label>
+            <input type="text" id="txtidNetsuiteEditar" class="form-control">
           </div>
 
           <div class="form-group">
