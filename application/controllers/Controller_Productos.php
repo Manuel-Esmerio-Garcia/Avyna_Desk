@@ -102,21 +102,15 @@ public function Consultar_Info_Editar()
   print_r(json_encode($info));
 }
 
-public function Agregar_Producto()
-{
+public function Agregar_Producto(){
   $data = $this->input->post();
-
   $response    = $this->producto->Agregar_Producto($data);
-
   print_r($response);
 }
 
-public function Editar_Producto()
-{
+public function Editar_Producto(){
    $data = $this->input->post();
-
    $ID = $data['ID'];
-
    unset($data['ID']);
 
   $response    = $this->producto->Editar_Producto($data,$ID);
