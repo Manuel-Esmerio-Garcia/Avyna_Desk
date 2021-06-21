@@ -156,12 +156,19 @@
         
         <div class="container-fluid">
           
-          <div class="form-group">
-            <div class="checkbox">
-              <label style="float: right;"><input type="checkbox" id="checkAutorizar"> Autorizar Pagos</label>
-              <label style="float: right; margin-right: 10px;"><input type="checkbox" id="checkExtracciones"> Extracciones Pagadas</label>
-              <label style="float: right; margin-right: 10px;"><input type="checkbox" id="checkFacturacion"> Facturación</label>
+          <div class="class-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="form-group">
+              <div class="checkbox">
+                <label style="float: right;"><input type="checkbox" id="checkAutorizar"> Autorizar Pagos</label>
+                <label style="float: right; margin-right: 10px;"><input type="checkbox" id="checkExtracciones"> Extracciones Pagadas</label>
+                <label style="float: right; margin-right: 10px;"><input type="checkbox" id="checkFacturacion"> Facturación</label>
+              </div>
             </div>
+          </div>
+
+          <div class="form-group">
+            <label for="txtIdNetsuite">idNetsuite:*</label>
+            <input type="text" class="form-control" id="txtIdNetsuite">
           </div>
         
           <div class="form-group">
@@ -297,7 +304,6 @@
   </div>
 </div>
 
-
 <!-- Modal -->
 <div id="myModal_Editar" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -312,13 +318,20 @@
         
         <div class="container-fluid">
           
-          <div class="form-group">
-            <div class="checkbox">
-              <label style="float: right;"><input type="checkbox" id="check_Status"> Inactivo</label>
-              <label style="float: right; margin-right: 10px"><input type="checkbox" id="checkAutorizarEditar"> Autorizar Pagos</label>
-              <label style="float: right; margin-right: 10px;"><input type="checkbox" id="checkExtraccionesEditar"> Extracciones Pagadas</label>
-              <label style="float: right; margin-right: 10px;"><input type="checkbox" id="checkFacturacionEditar"> Facturación</label>
+          <div class="class-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="form-group">
+              <div class="checkbox">
+                <label style="float: right;"><input type="checkbox" id="check_Status"> Inactivo</label>
+                <label style="float: right; margin-right: 10px"><input type="checkbox" id="checkAutorizarEditar"> Autorizar Pagos</label>
+                <label style="float: right; margin-right: 10px;"><input type="checkbox" id="checkExtraccionesEditar"> Extracciones Pagadas</label>
+                <label style="float: right; margin-right: 10px;"><input type="checkbox" id="checkFacturacionEditar"> Facturación</label>
+              </div>
             </div>
+          </div>
+
+          <div class="form-group">
+            <label for="txtIdNetsuiteEditar">idNetsuite:*</label>
+            <input type="text" class="form-control" id="txtIdNetsuiteEditar">
           </div>
 
           <div class="form-group">
